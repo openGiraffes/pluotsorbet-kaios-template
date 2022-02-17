@@ -1,6 +1,8 @@
 # pluotsorbet-kaios-template
 PluotSorbet Java Simulator for KaiOS Template
 
+[中文文档](README_CN.md)
+
 ## How to test your JAR
 
 ### Step 1
