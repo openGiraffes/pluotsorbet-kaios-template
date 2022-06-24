@@ -42,8 +42,8 @@ Use WebIDE to open `application` folder, and run it!
 
 1. (ALL) Sound is not supported, it is a known bug at present, we will try to fix it in the future.
 
-2. (For some games) Occasionally there is a problem that the archive cannot be saved, which is a known bug
-3. (ALL) The game may not be able to exit. A black screen will be displayed when exiting. You need to press the hang button to exit. This problem has been fixed, and some software may not be modified in time.
+2. ~~(For some games) Occasionally there is a problem that the archive cannot be saved, which is a known bug~~
+3. ~~(ALL) The game may not be able to exit. A black screen will be displayed when exiting. You need to press the hang button to exit. This problem has been fixed, and some software may not be modified in time.~~
 
 4. (For some games) Some game direction keys cannot use numeric keys.
 
@@ -51,7 +51,7 @@ Use WebIDE to open `application` folder, and run it!
 
 6. (ALL) If an error is prompted during operation, you need to press the hang button to restart the software. This is a known problem and may be fixed in the future.
 
-7. (ALL) When you use the `*` and `#` keys to take a screenshot, it may trigger a reload of the game and cause a flashing screen. This is a function introduced during debugging and may be fixed in the future.
+7. ~~(ALL) When you use the `*` and `#` keys to take a screenshot, it may trigger a reload of the game and cause a flashing screen. This is a function introduced during debugging and may be fixed in the future.~~
 
 ## License
 
