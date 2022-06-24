@@ -3326,6 +3326,10 @@ var fs = function() {
     syncStore();
   }
   window.addEventListener("pagehide", flushAll);
+  window.onbeforeunload = function() {
+    flushAll();
+    //alert('exit!');
+}
   function list(path) {
     path = normalizePath(path);
     if (DEBUG_FS) {
@@ -11166,6 +11170,8 @@ function hideDownloadScreen() {
 }
 function showExitScreen() {
   document.getElementById("exit-screen").style.display = "block";
+  //fs.flushAll();
+  setTimeout(window.close,500); 
 }
 function backgroundCheck() {
   var bgServer = MIDP.manifest["Nokia-MIDlet-bg-server"];
@@ -13043,36 +13049,36 @@ function stopAndSaveTimeline() {
   saveAs(blob, profileFilename);
   console.log("Saved profile in: adb pull /sdcard/downloads/" + profileFilename);
 }
+
+function run() { 
+  J2ME.Context.setWriters(new J2ME.IndentingWriter);
+  profile === 1 && profiler.start(2E3, false);
+  bigBang = performance.now();
+  profile === 2 && startTimeline();
+  jvm.startIsolate0(config.main, config.args);
+  
+}
 function start() {
-	try{
-		
-  var deferStartup = config.deferStartup | 0; 
-  if (deferStartup && typeof Benchmark !== "undefined") {
-    setTimeout(function() {
-      Benchmark.startup.setStartTime(performance.now()); 
-      run();
-    }, deferStartup);
-  } else { 
-    run(); 
-  }
-	}
-	catch(err)
-	{
-		alert(err);
-	}
-  function run() {
-	  try{ 
-    J2ME.Context.setWriters(new J2ME.IndentingWriter);
-    profile === 1 && profiler.start(2E3, false);
-    bigBang = performance.now();
-    profile === 2 && startTimeline();
-    jvm.startIsolate0(config.main, config.args);
-	  }
-	catch(err)
-	{
-		alert(err);
-	}
-  }
+	
+		while(true)
+    {
+      try{
+      var deferStartup = config.deferStartup | 0; 
+      if (deferStartup && typeof Benchmark !== "undefined") {
+        setTimeout(function() {
+          Benchmark.startup.setStartTime(performance.now()); 
+          run();
+        }, deferStartup);
+      } else { 
+        run(); 
+      }
+      break;
+      }
+      catch(err)
+      {
+        alert(err+"(点击确定键继续，如果等待十秒钟还没有启动，请尝试重启软件)");
+      }
+    } 
 }
 if (!config.midletClassName) {
   loadingPromises = loadingPromises.concat(loadingMIDletPromises);
@@ -13205,8 +13211,10 @@ var profiler = profile === 1 ? function() {
   return new Profiler;
 }() : undefined;
 
+//start();
+
 window.onload = function() {
-  setTimeout(start, 20);
-  setTimeout(start, 20);
+  //setTimeout(start, 20);
+   setTimeout(start, 20);
 };
 //# sourceMappingURL=main-all.js.map

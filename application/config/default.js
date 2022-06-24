@@ -42,3 +42,12 @@ var config = {
 // from a subdirectory, like tests/fs/, and they set this accordingly, so code
 // that loads files, like libs/fs-init.js, can load them from the right place.
 var APP_BASE_DIR = "./";
+/* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+/* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+
+// Instead of being loaded directly, this is appended to config/default.js
+// by package.sh at `make app` build time, so it only applies when the app
+// is loaded as an open web app.
+
+config.autosize = "1";
+config.logConsole = "web";

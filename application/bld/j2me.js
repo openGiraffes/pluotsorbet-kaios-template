@@ -16,7 +16,7 @@
 /** @const */ var release = true;
 /** @const */ var profile = 0;
 /** @const */ var profileFormat = "PLAIN";
-/** @const */ var asmJsTotalMemory = 512 * 1024 * 1024;
+/** @const */ var asmJsTotalMemory = 16 * 1024 * 1024 * 1024;
 /*
  * Copyright 2014 Mozilla Foundation
  *

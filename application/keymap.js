@@ -62,8 +62,7 @@ function handleKeydown(e) {
             }
             MIDP.sendKeyPress(42);
             break;
-        case '#':
-            start();
+        case '#': 
             MIDP.sendKeyPress(35);
             break;
     }
